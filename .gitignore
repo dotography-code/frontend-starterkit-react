@@ -1,0 +1,96 @@
+### Gitignore by Github
+*.class
+*.log
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+### Gitignore by Lift
+# use glob syntax.
+syntax: glob
+*.ser
+*.class
+*~
+*.bak
+*.off
+*.old
+.DS_Store
+
+# logs
+*.log
+
+# eclipse conf file
+.settings
+.classpath
+.project
+.manager
+.externalToolBuilders
+
+# ensime/emacs conf files
+.ensime
+.scala_dependencies
+
+# building
+target
+null
+tmp*
+dist
+test-output
+
+# sbt
+target
+lib_managed
+src_managed
+project/boot
+/.history
+/.cache
+/extsrc
+
+
+# other scm
+.svn
+.CVS
+.hg*
+
+# switch to regexp syntax.
+#  syntax: regexp
+#  ^\.pc/
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea
+
+# Pax Runner (for easy OSGi launching)
+runner
+
+### Gitignore by Dotography
+node_modules
+bower_components
+src/main/webapp
+!src/main/webapp/WEB-INF
+app/dist/*
+app/dist-intermediate/*
+app/build/*
+.sass-cache
+_note
+.cache-main
+.cache-tests
+bin/
+*.db
+.keep
+*.sublime-workspace
+*.sublime-project

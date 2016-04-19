@@ -1,0 +1,19 @@
+
+html,
+body{
+	height:100%;
+	/*min-width:$min_width;*/
+	font-family:'Montserrat';
+	font-size: 12px;
+	padding: 0px;
+	margin: 0px;
+}
+
+#app{
+	color:#333;
+	background:linear-gradient(135deg, #626a7d, $bg_color);
+	width:100%;
+	height:100%;
+	overflow-x:hidden;
+}
+

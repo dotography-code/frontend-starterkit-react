@@ -1,0 +1,1 @@
+{"data":[{"id":1234,"firstname":"first1","lastname":"last1","gender":{"id":12,"title":"Male"},"spouses":[{"id":6789,"firstname":"first spouse","lastname":"last spouse","gender":{"id":13,"title":"Female"}}]},{"id":5678,"firstname":"first2","lastname":"last2","gender":{"id":13,"title":"Female"},"spouses":[]}]}
