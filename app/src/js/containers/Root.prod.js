@@ -1,7 +1,7 @@
 'user restrict'
 
 import React, { Component, PropTypes } from 'react'
-import App from './App'
+import routes from '../routes'
 
 export default class Root extends Component {
   render() {
@@ -12,3 +12,4 @@ export default class Root extends Component {
     )
   }
 }
+
