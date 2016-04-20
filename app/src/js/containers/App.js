@@ -9,7 +9,7 @@ class App extends Component {
     super(props)
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillReceiveProps(nextProps) {
 
   }
 
@@ -21,13 +21,16 @@ class App extends Component {
 
   }
 
+  componentDidUpdate() {
+
+  }
+
   componentWillUnmount() {
 
   }
 
   render() {
     const { children } = this.props;
-
     return (
       <div>
         { children }

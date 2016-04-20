@@ -10,6 +10,7 @@ export const SampleDashboard = ({
       <div className="row">
         <div className='col-xs-16'>
           Dashboard
+          <button >Log out</button>
         </div>
         <div className='col-xs-8'>
           <div className="row">

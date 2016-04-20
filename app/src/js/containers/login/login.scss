@@ -1,0 +1,105 @@
+.container {
+  margin: 80px auto;
+  width: 640px;
+}
+
+.login {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 20px 20px;
+  width: 310px;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -8px; right: -8px; bottom: -8px; left: -8px;
+    z-index: -1;
+    background: rgba(black, .08);
+    border-radius: 4px;
+  }
+
+  h1 {
+    margin: -20px -20px 21px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    text-shadow: 0 1px white;
+    background: #f3f3f3;
+    border-bottom: 1px solid #cfcfcf;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .form-item {
+    margin: 20px 0 0;
+  }
+
+  .form-submit {
+    text-align: center;
+    margin-top: 10px;
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    button:disabled {
+      background-color: #CCC;
+      color: #666;
+    }
+
+  }
+
+  .form-item:first-child { margin-top: 0; }
+
+  .error-messages {
+    margin-top: 10px;
+    padding-left: 20px;
+
+    li {
+      font-size: 12px;
+      color: red;
+    }
+
+  }
+
+  .loading {
+    font-size: 12px;
+    color: #CCC;
+    margin: 10px 20px 0px;
+    text-align: center;
+  }
+
+
+  :-moz-placeholder {
+    color: #c9c9c9 !important;
+    font-size: 13px;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #ccc;
+    font-size: 13px;
+  }
+
+  input[type=text], input[type=password] {
+    margin: 5px;
+    padding: 0 10px;
+    width: 260px;
+    height: 34px;
+    color: #404040;
+    background: white;
+    border: 1px solid;
+    border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+    border-radius: 2px;
+    outline: 5px solid #eff4f7;
+
+    &:focus {
+      border-color: #7dc9e2;
+      outline-color: #dceefc;
+      outline-offset: 0; // WebKit sets this to -1 by default
+    }
+  }
+}
