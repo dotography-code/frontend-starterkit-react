@@ -18,7 +18,9 @@
 ## Bundle application
 ```javascript
   npm run dist
-  //distribution package locate at app/dist
+  //distribution package is built in "app/dist"
 ```
 
+## Development
+Start your coding in "app/src"
 
