@@ -1,26 +1,16 @@
 # Front End Starter Kit - React
 
-## Install node package
-```javascript
-  npm install
-```
+Front End Starter Kit is a front-end template for building web application using React.
+It does not impse a specific development philosophy, so you're free to architect your code in the way that you want.
 
-## Start development server
-```javascript
-  npm start
-```
+## Features
 
-## Run test
-```javascript
-  npm run test
-```
+* Develop web app using HTML5/CSS3/JavaScript
+* Javascript UI Library - [React](http://facebook.github.io/react/)
+* Automated workflow (build/run/deploy/test) using [gulp.js](http://gulpjs.com) and [webpack](https://webpack.github.io)
+* Javascript Test Framework - [Mocha](https://mochajs.org)
+* Support Javascript ES6
 
-## Bundle application
-```javascript
-  npm run dist
-  //distribution package is built in "app/dist"
-```
+## Documentation
 
-## Development
-Start your coding in "app/src"
-
+[documentation table of contents](doc/TOC.md)
