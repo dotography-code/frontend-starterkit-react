@@ -1,4 +1,4 @@
-[Front End Starter Kit - React](/) | [Documentation table of contents](TOC.md)
+[Front End Starter Kit - React](../) | [Documentation table of contents](TOC.md)
 
 
 ## Prerequisites

@@ -1,4 +1,4 @@
-[Front End Starter Kit - React](/)
+[Front End Starter Kit - React](../)
 
 ## Getting started
 
