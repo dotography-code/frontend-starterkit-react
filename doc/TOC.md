@@ -1,10 +1,10 @@
-[Front End Starter Kit - React](../)
+# Documentation - table of contents
 
 ## Getting started
 
-* [Overview](usage.md) - Overview of the project contents
+* [Overview](usage.md) - Overview
 
 ## Related
 
-* [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) - Airbnb JavaScript Style Guide() {
+* [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) - JavaScript Style Guide
 

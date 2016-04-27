@@ -1,5 +1,4 @@
-[Front End Starter Kit - React](../) | [Documentation table of contents](TOC.md)
-
+# [Documentation table of contents](TOC.md) | Overview
 
 ## Prerequisites
 
@@ -25,34 +24,24 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
 
 #### Development
 
-1. Install dependencies package via npm
-
-```
-    $ npm intall
-```
-
+1. Install dependencies package via ```$ npm intall```
 2. Add some content, style, and functionality.
-
-3. Run the development server
-
-```
-    $ npm start
-```
-
+3. Run the development server ```$ npm start```
 4. Access your local development site via http://localhost:3000/
+
 
 #### Build web app for distribution 
 
 - Build your web app, the automate script will create /dist folder for your distribution package (production version)
 
 ```
-    $ npm dist
+    $ npm run dist
 ```
 
 *If you want to integrate with other build tool e.g. sbt with Lift framework. You can make some following configurations:
 
 
-1. Change the deployment target folder in gulpfile.bable.js.
+* Change the deployment target folder in gulpfile.bable.js.
 
 ```javascript
     ...
@@ -60,9 +49,9 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
     ...
 ```
 
-2. Change package command in package.json. Add 
+* Change package command in package.json. Add 
 
-```json
+```javascript
     ...
       "package": "npm install && npm run deploy && sbt package" // "sbt package"  
     ...
@@ -72,13 +61,11 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
 * "npm run deploy" - build web app and deploy to target folder
 * (Optional)"sbt package" - other build tool command
 
-3. Run package command
+* Run package command
 
 ```
-    $ npm package
+    $ npm run package
 ```
-
-
 
 #### Testing
 
@@ -104,6 +91,7 @@ The followings are commands that use for running test
   $ npm run test:watch-file ./app/src/js/specs/<--any files-->
 ```
 
+---
 
 ## Basic structure
 
