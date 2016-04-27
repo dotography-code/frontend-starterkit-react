@@ -43,7 +43,7 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
 
     Build your web app, run ```$ npm run deploy```, the script will create ```public``` folder, then copy this folder to the destination (e.g. /var/html/)
 
-* Dockerize web app
+* Dockerize web app (Required docker)
     
     1. Build your web app, run ```$ npm run deploy```.
     2. Build Docker image run ```$ docker build -t <your username>/<name>```.
