@@ -46,9 +46,9 @@ export const login = (email, password) => {
     return { status, message, data }
 
   }, error => {
-
+    console.log
     error = (error instanceof Error)? error.message: error;
-    return Promise.reject(error)
+    return Promise.reject([error])
 
   })
 

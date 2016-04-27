@@ -1,5 +1,5 @@
 
-const API_PROD_URL = '/'
+const API_PROD_URL = 'http://production.api.url/'
 const API_LOCAL_URL = 'http://localhost:8000/assets/vendors/mock_json/'
 const API_DEV_URL = 'http://localhost:8081/'
 

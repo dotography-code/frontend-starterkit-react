@@ -27,45 +27,53 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
 1. Install dependencies package via ```$ npm intall```
 2. Add some content, style, and functionality.
 3. Run the development server ```$ npm start```
-4. Access your local development site via http://localhost:3000/
+4. Access your local development site via URL http://localhost:3000/
 
 
-#### Build web app for distribution 
+#### Run production server
 
-- Build your web app, the automate script will create /dist folder for your distribution package (production version)
+1. Install dependencies package via ```$ npm intall```, if needed
+2. Run the production server ```$ npm run server```
+3. Access your production site via URL http://localhost:8080/
 
-```
-    $ npm run dist
-```
+#### Distribute your web app with other environment
 
-*If you want to integrate with other build tool e.g. sbt with Lift framework. You can make some following configurations:
+* Apache
 
+    Build your web app, run ```$ npm run dist```, the script will create ```app/dist``` folder, then copy this folder to the destination (e.g. /var/html/)
 
-* Change the deployment target folder in gulpfile.bable.js.
+* Sbt with Lift framework
 
-```javascript
-    ...
-      deployTarget: 'src/main/webapp', // webapp folder in Lift framework
-    ...
-```
+    If you want to integrate with other build tool e.g. sbt with Lift framework. You can make some following configurations:
 
-* Change package command in package.json. Add 
+    1. Carefully copy your web app project to the Lift project root folder.
 
-```javascript
-    ...
-      "package": "npm install && npm run deploy && sbt package" // "sbt package"  
-    ...
-```
+    2. Change the deployment target folder in gulpfile.bable.js.
 
-    "npm install" - install package dependencies that use by web app
-    "npm run deploy" - build web app and deploy to target folder
-    (Optional)"sbt package" - other build tool command
+        ```javascript
+            ...
+              deployTarget: 'src/main/webapp', // webapp folder in Lift framework
+            ...
+        ```
 
-* Run package command
+    3. Change package command in package.json. Add 
 
-```
-    $ npm run package
-```
+        ```javascript
+            ...
+              "package": "npm install && npm run deploy && sbt package" 
+            ...
+        ```
+
+        "npm install" - install package dependencies that use by web app
+        "npm run deploy" - build web app and deploy to target folder
+        "sbt package" - package web app using sbt
+
+    4. Run package command, you will get a .war file
+
+        ```
+            $ npm run package
+        ```
+
 
 #### Testing
 
@@ -106,6 +114,7 @@ The followings are commands that use for running test
 │       └── index.html (HTML template) 
 ├── dist (Production version)
 ├── doc (Documentation)
+├── server.js (Simple node server script)
 ├── gulfile.bable.js (Automate workflow configuration)
 ├── package.json (Deployment and project configuration)
 └── webpack.config.js (Webpack configuration file)

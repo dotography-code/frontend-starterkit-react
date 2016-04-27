@@ -12,7 +12,8 @@
     "test": "mocha ./app/src/js/specs --compilers js:babel-core/register --recursive --require ./app/src/js/specs/setup.js --require ignore-styles",
     "test:watch": "npm test -- --watch",
     "test:watch-file": "mocha --compilers js:babel-core/register --recursive --require ./app/src/js/specs/setup.js --require ignore-styles --watch",
-    "package": "npm install && npm run deploy && sbt package"
+    "package": "npm install && npm run deploy && sbt package",
+    "server": "npm run dist && node server.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "babel-polyfill": "^6.7.4",
     "bootstrap": "^3.3.6",
     "classnames": "^2.2.3",
+    "express": "^4.13.4",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.11.1",
     "lowdb": "^0.12.5",
