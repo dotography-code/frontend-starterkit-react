@@ -1,7 +1,11 @@
 import path from "path";
 import webpack from "webpack";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 
+const htmlWebpack = (DEBUG) => {
+  return { template: path.resolve(__dirname, 'app', 'src', 'index.html'), filename: (DEBUG? "index.html" : "index.html") }
+}
 
 export default (DEBUG, PATH, PORT=3000) => ({
 
@@ -24,7 +28,7 @@ export default (DEBUG, PATH, PORT=3000) => ({
   output: {
     path: path.resolve(__dirname, PATH),
     filename: DEBUG ? "main.js" : "main-[hash].js",
-    publicPath: '../assets/'
+    publicPath: DEBUG ? '' : '/assets/'
   },
 
   //Load external jQuery
@@ -74,6 +78,7 @@ export default (DEBUG, PATH, PORT=3000) => ({
     ? [
       new ExtractTextPlugin("style.css", {allChunks: true}),
       new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"common", /* filename= */"common.js"),
+      new HtmlWebpackPlugin(htmlWebpack(DEBUG)),
       new webpack.ProvidePlugin({
         '$': 'jquery',
         'jQuery': 'jquery'
@@ -82,6 +87,7 @@ export default (DEBUG, PATH, PORT=3000) => ({
       new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'}),
       new ExtractTextPlugin("style.css", {allChunks: false}),
       new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"common", /* filename= */"common-[hash].js"),
+      new HtmlWebpackPlugin(htmlWebpack(DEBUG)),
       new webpack.ProvidePlugin({
         '$': 'jquery',
         'jQuery': 'jquery'

@@ -34,8 +34,10 @@ gulp.task('deploy', () => runSequence('dist:clean', 'deploy:clean', 'dist:build'
 
 
 gulp.task('deploy:dist', () => {
-  gulp.src(config.distPath + '/assets/**').pipe(gulp.dest(config.deployTarget+'/assets'));
-  gulp.src(config.distPath + '/*.html').pipe(gulp.dest(config.deployTarget));
+  // gulp.src(config.distPath + '/assets/**').pipe(gulp.dest(config.deployTarget+'/assets'));
+  // gulp.src(config.distPath + '/assets/*.js').pipe(gulp.dest(config.deployTarget+'/assets')).pipe($.size({title: 'js'}))
+  // gulp.src(config.distPath + '/*.html').pipe(gulp.dest(config.deployTarget));
+  gulp.src(config.distPath + '/**').pipe(gulp.dest(config.deployTarget));
 });
 
 // Remove all built files
@@ -44,14 +46,14 @@ gulp.task('dist:clean', cb => del(['app/dist', 'app/dist-intermediate'], {dot: t
 gulp.task('deploy:clean', cb => del([config.deployTarget + '/assets', config.deployTarget + '/index.html'], {dot: true}, cb));
 
 // Copy static files across to our final directory
-gulp.task('serve:static', () =>
+gulp.task('serve:static', () => {
   gulp.src([
     'app/src/assets/**'
   ])
     .pipe($.changed('build'))
     .pipe(gulp.dest('app/build/assets'))
     .pipe($.size({title: 'static'}))
-);
+});
 
 gulp.task('dist:static', () =>
   gulp.src([
@@ -63,29 +65,28 @@ gulp.task('dist:static', () =>
 
 // Copy our index file and inject css/script imports for this build
 gulp.task('serve:index', () => {
-  return gulp
-    .src('app/src/index.html')
-    .pipe($.injectString.after('<!-- inject:app:css -->', '<link href="/assets/style.css" rel="stylesheet" />'))
-    .pipe($.injectString.after('<!-- inject:app:js -->', '<script src="/assets/main.js"></script>'))
-    .pipe($.injectString.after('<!-- inject:app:js -->', '<script src="/assets/common.js"></script>'))
-    .pipe(gulp.dest('app/build'));
+  return true
 });
 
 // Copy our index file and inject css/script imports for this build
 gulp.task('dist:index', ['dist:update-static'],  () => {
 
-  const app = gulp
+
+  gulp.src(["index.html"], {cwd: 'app/dist-intermediate'})
+      .pipe(gulp.dest('app/dist'));
+
+  return gulp
     .src(["*.{css,js}"], {cwd: 'app/dist-intermediate'})
     .pipe(gulp.dest('app/dist/assets'));
 
   // Build the index.html using the names of compiled files
-  return gulp.src('app/src/index.html')
+/*  return gulp.src('app/src/index.html')
     .pipe($.inject(app, {
       ignorePath: 'app/dist',
       starttag: '<!-- inject:app:{{ext}} -->'
     }))
     .on("error", $.util.log)
-    .pipe(gulp.dest('app/dist'));
+    .pipe(gulp.dest('app/dist'));*/
 });
 
 gulp.task('dist:update-static', () =>
@@ -103,7 +104,6 @@ gulp.task('serve:start', ['serve:static'], () => {
   return new WebpackDevServer(webpack(config), {
     contentBase: './app/build',
     historyApiFallback: true,
-    publicPath: '/assets/',
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000
@@ -115,7 +115,6 @@ gulp.task('serve:start', ['serve:static'], () => {
       $.util.log(`[${packageJson.name} serve]`, `Listening at 0.0.0.0:${PORT}`);
     });
 });
-
 // Create a distributable package
 gulp.task('dist:build', ['dist:static'], cb => {
   const config = webpackConfig(false, 'app/dist-intermediate');
