@@ -96,15 +96,15 @@ The followings are commands that use for running test
 ```
 .
 ├── app
-│   ├── src (Source directory)
-│       ├── assets ( Common stuffs e.g. images, fonts, external library and etc. )
+│   ├── dist (Production version)
+│   └── src (Source directory)
+│       ├── assets (Common stuffs e.g. images, fonts, external library and etc.)
 │       ├── js
 │       │   ├── specs (Code spec. for unit testing) 
 │       │   └── index.js (Entry point for your application) 
 │       ├── scss
 │       ├── style.scss
 │       └── index.html (HTML template) 
-├── dist (Production version)
 ├── doc (Documentation)
 ├── gulfile.bable.js (Automate workflow configuration)
 ├── package.json (Deployment and project configuration)
