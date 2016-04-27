@@ -57,9 +57,9 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
     ...
 ```
 
-* "npm install" - install package dependencies that use by web app
-* "npm run deploy" - build web app and deploy to target folder
-* (Optional)"sbt package" - other build tool command
+    "npm install" - install package dependencies that use by web app
+    "npm run deploy" - build web app and deploy to target folder
+    (Optional)"sbt package" - other build tool command
 
 * Run package command
 
@@ -91,34 +91,23 @@ The followings are commands that use for running test
   $ npm run test:watch-file ./app/src/js/specs/<--any files-->
 ```
 
----
-
 ## Basic structure
 
-- A basic file structure 
-
 ```
-- /app
-- /app/src - Source folder
-- /dist - Distribution package
-- gulfile.bable.js - Automate workflow configuration in es6
-- webpack.config.js - Webpack bundle configuration
-- package.json - Deployment and project configuration
-```
-
-
-- Source file structure (Working directory for your application)
-
-```
-- /app
-- /app/src - Source folder
-- /app/src/assets - Common stuffs e.g. images, fonts, external library and etc.
-- /app/src/js - Javascript
-- /app/src/js/specs - Spec for unit test
-- /app/src/js/index.js - Entry point for your application 
-- /app/src/scss - SCSS
-- style.scss
-- index.html
-```
+.
+├── app
+│   ├── src (Source directory)
+│       ├── assets ( Common stuffs e.g. images, fonts, external library and etc. )
+│       ├── js
+│       │   ├── specs (Code spec. for unit testing) 
+│       │   └── index.js (Entry point for your application) 
+│       ├── scss
+│       ├── style.scss
+│       └── index.html (HTML template) 
+├── dist (Production version)
+├── doc (Documentation)
+├── gulfile.bable.js (Automate workflow configuration)
+├── package.json (Deployment and project configuration)
+└── webpack.config.js (Webpack configuration file)
 
 

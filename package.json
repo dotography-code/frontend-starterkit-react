@@ -12,7 +12,6 @@
     "test": "mocha ./app/src/js/specs --compilers js:babel-core/register --recursive --require ./app/src/js/specs/setup.js --require ignore-styles",
     "test:watch": "npm test -- --watch",
     "test:watch-file": "mocha --compilers js:babel-core/register --recursive --require ./app/src/js/specs/setup.js --require ignore-styles --watch",
-    "testapi": "sbt -Drun.mode=test container:start test",
     "package": "npm install && npm run deploy && sbt package"
   },
   "repository": {
