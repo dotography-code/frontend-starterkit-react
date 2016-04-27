@@ -33,8 +33,9 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
 #### Run production server
 
 1. Install dependencies package via ```$ npm intall```, if needed
-2. Run the production server ```$ npm run server```
-3. Access your production site via URL http://localhost:8080/
+2. Build your web app ```$ npm run dist```
+3. Run the production server ```$ npm run server```
+4. Access your production site via URL http://localhost:8080/
 
 #### Distribute your web app with other environment
 
