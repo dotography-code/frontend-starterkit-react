@@ -5,11 +5,11 @@ var path = require('path')
 
 var app = express()
 
-app.use(express.static('app/dist'));
+app.use(express.static('public'));
 
 // HTML5 Fallback history
 app.use(function (req, res, next) {
-  if (req.accepts('html')) res.sendFile(path.resolve(__dirname, 'app/dist/index.html'))
+  if (req.accepts('html')) res.sendFile(path.resolve(__dirname, 'public/index.html'))
   else next()
 })
 

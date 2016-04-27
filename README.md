@@ -10,7 +10,8 @@ It does not impse a specific development philosophy, so you're free to architect
 * Automated workflow (build/run/deploy/test) using [gulp.js](http://gulpjs.com) and [webpack](https://webpack.github.io)
 * Javascript Test Framework - [Mocha](https://mochajs.org)
 * Support Javascript ES6
-* Node.js server
+* Built in node server
+* Ready for dockerizing
 
 ## Documentation
 

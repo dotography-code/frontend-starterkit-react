@@ -33,7 +33,7 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
 #### Run production server
 
 1. Install dependencies package via ```$ npm intall```, if needed
-2. Build your web app ```$ npm run dist```
+2. Deploy your web app ```$ npm run deploy```, script create ```public/``` folder.
 3. Run the production server ```$ npm run server```
 4. Access your production site via URL http://localhost:8080/
 
@@ -41,7 +41,12 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
 
 * Apache
 
-    Build your web app, run ```$ npm run dist```, the script will create ```app/dist``` folder, then copy this folder to the destination (e.g. /var/html/)
+    Build your web app, run ```$ npm run deploy```, the script will create ```public``` folder, then copy this folder to the destination (e.g. /var/html/)
+
+* Dockerize web app
+    
+    1. Build your web app, run ```$ npm run deploy```.
+    2. Build Docker image run ```$ docker build -t <your username>/<name>```.
 
 * Sbt with Lift framework
 
@@ -74,7 +79,6 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
         ```
             $ npm run package
         ```
-
 
 #### Testing
 

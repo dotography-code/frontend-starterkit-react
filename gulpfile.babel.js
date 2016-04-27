@@ -16,7 +16,7 @@ const $ = gulpLoadPlugins({camelize: true});
 var config = {
   devPath: 'app/src',
   distPath: 'app/dist',
-  deployTarget: 'src/main/webapp',
+  deployTarget: 'public',
   verdorsPath: [
     'app/dev/vendors/**/*',
     'bower_components/jquery/dist/jquery.min.js'

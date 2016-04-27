@@ -85,6 +85,7 @@ src/main/webapp
 app/dist/*
 app/dist-intermediate/*
 app/build/*
+public
 .sass-cache
 _note
 .cache-main
