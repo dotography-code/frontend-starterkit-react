@@ -6,6 +6,7 @@ import Logout from '../containers/logout'
 import Dashboard from '../containers/dashboard'
 import { requireAuthentication } from '../containers/Authenticated'
 import { SampleDashboard } from '../components/sample/SampleContent'
+import ErrorPage from '../components/ErrorPage'
 import { loggedIn } from './auth'
 
 const requireAuth = (nextState, replace) => {
@@ -24,6 +25,7 @@ const routes = (
       <IndexRoute component={Dashboard} onEnter={requireAuth} />
       <Route path="/login" component={Login} />
       <Route path="/logout" component={Logout} />
+      <Route path="*" component={ErrorPage} />
     </Route>
   </Router>
 )

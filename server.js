@@ -2,16 +2,14 @@
 
 var express = require('express')
 var path = require('path')
+var historyApiFallback = require('connect-history-api-fallback');
 
 var app = express()
 
+// HTML5 Fallback history
+app.use(historyApiFallback());
 app.use(express.static('public'));
 
-// HTML5 Fallback history
-app.use(function (req, res, next) {
-  if (req.accepts('html')) res.sendFile(path.resolve(__dirname, 'public/index.html'))
-  else next()
-})
 
 var server = app.listen(8080, function(){
   var address = server.address();
