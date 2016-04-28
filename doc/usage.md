@@ -70,9 +70,9 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
             ...
         ```
 
-        "npm install" - install package dependencies that use by web app
-        "npm run deploy" - build web app and deploy to target folder
-        "sbt package" - package web app using sbt
+        * "npm install" - install package dependencies that use by web app
+        * "npm run deploy" - build web app and deploy to target folder
+        * "sbt package" - package web app using sbt
 
     4. Run package command, you will get a .war file
 
