@@ -1,7 +1,6 @@
 import del from "del";
 import path from "path";
 import gulp from "gulp";
-import open from "open";
 import gulpLoadPlugins from "gulp-load-plugins";
 import packageJson from "./package.json";
 import runSequence from "run-sequence";
@@ -28,7 +27,6 @@ var config = {
 gulp.task('serve', () => runSequence('serve:clean', 'serve:index', 'serve:start'));
 gulp.task('dist', () => runSequence('dist:clean', 'dist:build', 'dist:index'));
 gulp.task('clean', ['dist:clean', 'serve:clean', 'deploy:clean']);
-gulp.task('open', () => open('http://localhost:3000'));
 
 gulp.task('deploy', () => runSequence('dist:clean', 'deploy:clean', 'dist:build', 'dist:index', 'deploy:dist'))
 

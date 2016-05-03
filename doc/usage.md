@@ -138,3 +138,44 @@ The followings are commands that use for running test
 ```
 
 #### Basic Command
+Starterkit provide the followings commands
+
+```
+  $ npm start
+```
+ - Run development server, access development site via URL http://localhost:3000/
+ 
+```
+  $ npm run clean
+```
+ - Delete all build & deploy file
+
+```
+  $ npm run deploy
+```
+ - Build web app, then copy all file to ```public``` folder by default
+
+```
+  $ npm run package
+```
+ - Build web app and pack all file into package file
+
+```
+  $ npm run server
+```
+ - Run inidvidual web HTML server (root at ```public``` folder), access via URL http://localhost:3000/
+
+```
+  $ npm run test
+```
+ - Use Mocha to run all testing specs file in /app/src/js/specs folder
+
+```
+  $ npm run test:watch
+```
+ - Use Mocha to run all testing and watch for files change
+
+```
+  $ npm run test:watch-file ./app/src/js/specs/<--any files-->
+```
+ - Use Mocha to run test on specific file and watch for change
