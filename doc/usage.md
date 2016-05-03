@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+* Understand basic node package management (npm) usage
+
 This starter kit requires a node package management (npm) installed on your machine.
 
 * Install Node.js https://nodejs.org/en/download/
@@ -18,21 +20,43 @@ This starter kit requires a node package management (npm) installed on your mach
 ```
 
 
+## Basic structure
+
+```
+.
+├── app
+│   └── src (Source directory)
+│       ├── assets (Common stuffs e.g. images, fonts, external library and etc.)
+│       ├── js
+│       │   ├── specs (Code spec. for unit testing) 
+│       │   └── index.js (Entry point for your application) 
+│       ├── scss
+│       ├── style.scss
+│       └── index.html (HTML template) 
+├── public (Production version for built-in node server or distribute to other environment)
+├── doc (Documentation)
+├── server.js (Simple node server script)
+├── gulfile.bable.js (Automate workflow configuration)
+├── package.json (Deployment and project configuration)
+└── webpack.config.js (Webpack configuration file)
+
+```
+
 ## Usage
 
 Once you have cloned or downloaded Starter Kit, creating a site or app usually involves the following:
 
 #### Development
 
-1. Install dependencies package via ```$ npm intall```
-2. Add some content, style, and functionality.
+1. Install dependencies package via ```$ npm install```
+2. Add your code e.g. content, style, and functionality in your src/ folder.
 3. Run the development server ```$ npm start```
 4. Access your local development site via URL http://localhost:3000/
 
 
 #### Run production server
 
-1. Install dependencies package via ```$ npm intall```, if needed
+1. Install dependencies package via ```$ npm install```, if needed
 2. Deploy your web app ```$ npm run deploy```, script create ```public/``` folder.
 3. Run the production server ```$ npm run server```
 4. Access your production site via URL http://localhost:8080/
@@ -48,33 +72,42 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
     1. Build your web app, run ```$ npm run deploy```.
     2. Build Docker image run ```$ docker build -t <your username>/<name>```.
 
-* Sbt with Lift framework
+* Sbt
 
-    If you want to integrate with other build tool e.g. sbt with Lift framework. You can make some following configurations:
+    If you want to integrate with other build tool e.g. sbt. You can make some following configurations:
 
     1. Carefully copy your web app project to the Lift project root folder.
 
     2. Change the deployment target folder in gulpfile.bable.js.
-
+    
+        default deployment folder
         ```javascript
             ...
-              deployTarget: 'src/main/webapp', // webapp folder in Lift framework
+              deployTarget: 'public', // webapp folder in Lift framework
+            ...
+        ```        
+    
+        change to webapp folder in Sbt
+        ```javascript
+            ...
+              deployTarget: 'src/main/webapp', // webapp folder in Sbt
             ...
         ```
 
-    3. Change package command in package.json. Add 
+    3. Change package command in package.json file.  
 
         ```javascript
-            ...
-              "package": "npm install && npm run deploy && sbt package" 
-            ...
+            "scripts": {
+                ...
+                "package": "npm install && npm run deploy && sbt package" //Add sbt package  
+            }
         ```
 
         * "npm install" - install package dependencies that use by web app
         * "npm run deploy" - build web app and deploy to target folder
         * "sbt package" - package web app using sbt
 
-    4. Run package command, you will get a .war file
+    4. Run package command in your console, you will get a .war file
 
         ```
             $ npm run package
@@ -82,7 +115,7 @@ Once you have cloned or downloaded Starter Kit, creating a site or app usually i
 
 #### Testing
 
-This starter kit use [Mocha](https://mochajs.org) javscript test framework for testing javascript code.
+This starter kit use [Mocha](https://mochajs.org) javascript test framework for testing javascript code.
 
 The followings are commands that use for running test 
 
@@ -104,24 +137,4 @@ The followings are commands that use for running test
   $ npm run test:watch-file ./app/src/js/specs/<--any files-->
 ```
 
-## Basic structure
-
-```
-.
-├── app
-│   ├── dist (Production version)
-│   └── src (Source directory)
-│       ├── assets (Common stuffs e.g. images, fonts, external library and etc.)
-│       ├── js
-│       │   ├── specs (Code spec. for unit testing) 
-│       │   └── index.js (Entry point for your application) 
-│       ├── scss
-│       ├── style.scss
-│       └── index.html (HTML template) 
-├── doc (Documentation)
-├── server.js (Simple node server script)
-├── gulfile.bable.js (Automate workflow configuration)
-├── package.json (Deployment and project configuration)
-└── webpack.config.js (Webpack configuration file)
-
-
+#### Basic Command
