@@ -101,6 +101,7 @@ gulp.task('serve:start', ['serve:static'], () => {
 
   return new WebpackDevServer(webpack(config), {
     contentBase: './app/build',
+		hot: true,
     historyApiFallback: true,
     watchOptions: {
       aggregateTimeout: 300,

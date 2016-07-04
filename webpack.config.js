@@ -12,6 +12,7 @@ export default (DEBUG, PATH, PORT=3000) => ({
   entry: {
     app: (DEBUG ? [
       `webpack-dev-server/client?http://localhost:${PORT}`,
+      'webpack/hot/only-dev-server',
     ] : []).concat([
       'babel-polyfill',
       './app/src/js/index',
@@ -53,10 +54,7 @@ export default (DEBUG, PATH, PORT=3000) => ({
         exclude: [
           path.resolve(__dirname, "app", "src", "js", "specs"),
         ],
-        loader: "babel-loader",
-        query: {
-          presets: ['es2015', 'react']
-        }
+				loaders: ['react-hot', 'babel']
       },
 
       // Load styles
@@ -79,6 +77,7 @@ export default (DEBUG, PATH, PORT=3000) => ({
       new ExtractTextPlugin("style.css", {allChunks: true}),
       new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"common", /* filename= */"common.js"),
       new HtmlWebpackPlugin(htmlWebpack(DEBUG)),
+			new webpack.HotModuleReplacementPlugin(),
       new webpack.ProvidePlugin({
         '$': 'jquery',
         'jQuery': 'jquery'
@@ -98,7 +97,6 @@ export default (DEBUG, PATH, PORT=3000) => ({
         mangle: {screw_ie8: true, keep_fnames: true}
       }),
       new webpack.optimize.OccurenceOrderPlugin(),
-      new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin()
     ],
 
