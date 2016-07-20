@@ -29,7 +29,7 @@ export default (DEBUG, PATH, PORT=3000) => ({
   output: {
     path: path.resolve(__dirname, PATH),
     filename: DEBUG ? "main.js" : "main-[hash].js",
-    publicPath: DEBUG ? '' : '/assets/'
+    publicPath: DEBUG ? '/' : '/assets/'
   },
 
   //Load external jQuery
@@ -66,7 +66,7 @@ export default (DEBUG, PATH, PORT=3000) => ({
       },
 
       // Load images
-      { test: /\.(png|jpg|gif)$/, loader: 'file-loader?name=images/[name].[ext]' },
+      { test: /\.(png|jpg|gif)$/, loaders: ['url-loader?limit=70000&name=images/[name].[ext]', 'image-webpack'] },
       // Load fonts
       { test: /\.(svg|eot|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader?name=fonts/[name].[ext]" }
     ]
