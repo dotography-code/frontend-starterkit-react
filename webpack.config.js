@@ -105,7 +105,7 @@ export default (DEBUG, PATH, PORT=3000) => ({
   },
 
   resolve: {
-    root: path.join(__dirname, "node_modules"),
+    root: [path.join(__dirname, "node_modules"), path.join(__dirname, "app", "src", "js")],
 
     modulesDirectories: ['node_modules', path.join(__dirname, "src", "assets")],
 
